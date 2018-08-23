@@ -1,5 +1,5 @@
 import numpy as np
-from sklearn import preprocessing, cross_validation, svm
+from sklearn import preprocessing, cross_validation, neighbors
 import pandas as pd
 from matplotlib import pyplot
 from scipy import spatial
@@ -13,7 +13,7 @@ Y = np.array(df['class'])
 
 X_train, X_test, Y_train, Y_test = cross_validation.train_test_split(X,Y,test_size=0.2)
 
-clf = svm.SVC()
+clf = neighbors.KNeighborsClassifier()
 clf.fit(X_train,Y_train)
 
 prediction = clf.predict(X_test)
@@ -24,4 +24,4 @@ print "Similarity Score:",(1-spatial.distance.cosine(Y_test,prediction))*100
 
 pyplot.scatter(range(len(Y_test)),Y_test,c='g')
 pyplot.scatter(range(len(prediction)),prediction,c='b')
-#pyplot.show()
+pyplot.show()

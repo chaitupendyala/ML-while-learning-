@@ -24,4 +24,4 @@ print "Similarity Score:",(1-spatial.distance.cosine(Y_test,prediction))*100
 
 pyplot.scatter(range(len(Y_test)),Y_test,c='g')
 pyplot.scatter(range(len(prediction)),prediction,c='b')
-#pyplot.show()
+pyplot.show()

@@ -18,9 +18,9 @@ clf.fit(X_train,Y_train)
 
 prediction = clf.predict(X_test)
 
-print prediction
-print Y_test
-print "Similarity Score:",(1-spatial.distance.cosine(Y_test,prediction))*100
+print (prediction)
+print (Y_test)
+print ("Similarity Score:",(1-spatial.distance.cosine(Y_test,prediction))*100)
 
 pyplot.scatter(range(len(Y_test)),Y_test,c='g')
 pyplot.scatter(range(len(prediction)),prediction,c='b')
